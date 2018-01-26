@@ -1,0 +1,274 @@
+\documentclass[12pt,]{report}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{
+            pdftitle={Book Example},
+            pdfauthor={Associação Brasileira de Jurimetria},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=Blue,
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum}
+\usepackage{fullwidth}
+\usepackage{indentfirst}
+\usepackage[left=2.5cm, right=2.5cm, top=4cm, bottom=3.8cm]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\RequirePackage{xcolor} % [dvipsnames]
+\definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+%\definecolor{Maroon}{cmyk}{0, 0.87, 0.68, 0.32}
+%\definecolor{RoyalBlue}{cmyk}{1, 0.50, 0, 0}
+%\definecolor{Black}{cmyk}{0, 0, 0, 0}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{spverbatim}
+\usepackage{lipsum}
+\usepackage{natbib}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{background}
+
+\newcommand{\prestadorEmpresaFoot}{Associação Brasileira de Jurimetria}
+\newcommand{\prestadorEmpresa}{Associação Brasileira de Jurimetria}
+\newcommand{\prestadorRepr}{Marcelo Guedes Nunes}
+\newcommand{\prestadorEnderecoFoot}{Rua Gomes de Carvalho, 1356, 2º andar. CEP 04547-005 - São Paulo, SP, Brasil.}
+\newcommand{\prestadorEndereco}{Rua Gomes de Carvalho, 1356, 2º andar}
+\newcommand{\prestadorEnderecoComp}{CEP 04547-005 - São Paulo, SP, Brasil}
+\newcommand{\prestadorSite}{\url{http://abj.org.br}}
+\newcommand{\prestadorEmail}{contato@abj.org.br}
+% \includegraphics[trim=left bottom right top, clip]{file}
+\newcommand{\logo}{\includegraphics[width=0.21\textwidth, trim=0cm 0cm 0cm 11.1cm, clip]{imgs/logo_abj.png}}
+
+\newcommand{\tipoTrabalho}{}
+\newcommand{\numero}{XXX}
+
+\newcommand{\clienteEmpresa}{XXX}
+\newcommand{\clienteEndereco}{XXX}
+\newcommand{\clienteEnderecoComp}{XXX}
+\newcommand{\clienteRepr}{XXX}
+\newcommand{\clienteEmail}{XXX}
+
+% \fancypagestyle{firststyle}
+% {
+%     \pagestyle{fancy}
+%     \lhead{\thepage}
+%     \chead{}
+%     \rhead{\logo{}}
+%     \cfoot{
+%         \footnotesize{\prestadorEmpresaFoot{}} \\
+%         \footnotesize{\prestadorEnderecoFoot{}} \\
+%         \footnotesize{\prestadorSite{}}
+%     }
+%     \renewcommand{\headrulewidth}{0.5pt}
+%     \renewcommand{\footrulewidth}{0.5pt}
+%     \setlength{\headsep}{.5in}
+% }
+%
+% \pagestyle{firststyle}
+
+\setlength{\parindent}{2em}
+% \setlength{\parskip}{1em}
+% \renewcommand{\baselinestretch}{1.2}
+% % \usepackage{palatino}
+% \renewcommand{\familydefault}{\sfdefault} % sans serif
+% \fontfamily{ppl}\selectfont
+
+%\renewcommand{\baselinestretch}{1.4}
+
+\backgroundsetup{
+scale=1,
+angle=0,
+opacity=1,
+color=black,
+contents={\begin{tikzpicture}[remember picture,overlay]
+\node at ([xshift=-4.35cm,yshift=-2.5cm] current page.north east) % Adjust the position of the logo.
+{\logo}; % logo goes here
+\end{tikzpicture}}
+}
+
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+
+\title{Book Example}
+\author{Associação Brasileira de Jurimetria}
+\date{25 de janeiro de 2018}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\listoftables
+\listoffigures
+\chapter{Introduction}\label{introducao-2}
+
+Para que o seu \texttt{bookdown} funcione tanto na web quanto no pdf,
+você deve evitar usar marcadores que dependem do contexto.
+
+Para fazer citações você deve usar \citep{Weinstein1997} ou
+\citet{Weinstein1997}. Isso também funciona pra pacotes \citep{R-base}
+ou \citet{R-base}. Para criar uma figura, é preferível que você use o
+\texttt{print} padrão do \texttt{knitr}. A label do gráfico será
+\texttt{fig:label-do-chunk}. Você pode citar fazendo
+\ref{fig:label-do-chunk}.
+
+\begin{figure}
+\centering
+\includegraphics{bookdown_files/figure-latex/label-do-chunk-1.pdf}
+\caption{\label{fig:label-do-chunk}Este é um gráfico.}
+\end{figure}
+
+Se você precisar importar uma imagem de fora do R, é melhor que você
+faça \texttt{!{[}{]}()}, a despeito do que diz o Yihui.
+
+\begin{figure}
+\centering
+\includegraphics{imgs/logo_abj.png}
+\caption{Essa é a caption.}\label{fig:logo}
+\end{figure}
+
+Se você estiver com muita vontade de seguir os ensinamentos do mestre,
+você pode usa o \texttt{knitr::include\_graphics}, mas vai precisar
+setar \texttt{dpi\ =\ NA}.
+
+\begin{figure}
+
+{\centering \includegraphics{imgs/logo_abj} 
+
+}
+
+\caption{The RStudio addin to help input LaTeX math.}\label{fig:mathquill}
+\end{figure}
+
+Essa forma tem três vantagens:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  A label fica no mesmo formato das demais.
+\item
+  Você pode setar o \texttt{fig.height} e o \texttt{fig.width}.
+\item
+  A numeração vai funcionar corretamente no \texttt{html}.
+\end{enumerate}
+
+O problema é que esse jeito não é o natural do \texttt{pandoc}.
+
+De toda forma, não é uma boa criar imagens que vieram dentro de pastas.
+Você terá problemas com o \texttt{path} dos arquivos. Ao invés de
+simplesmente copiar as pastas, você precisa fazer isso manualmente.
+
+Outro tipo de referência interessante é a referência a subseções. Você
+pode usar \protect\hyperlink{objetivos}{essa sintaxe} pra ir pra seção
+de objetivos. Você também pode usar \ref{objetivos}.
+
+Por fim, pra inserir tabelas, não use nada. O \texttt{abjTemplates} faz
+tudo por você. As captions, inclusive, agora podem ser adicionadas no
+cabeçalho do \texttt{chunk}. O \texttt{abjTemplates} sabe o que fazer
+dependendo do \texttt{output}.
+
+\chapter{Introdução}\label{introducao}
+
+\hypertarget{objetivos}{\section{Objetivos}\label{objetivos}}
+
+\section{Hipóteses}\label{hipoteses}
+
+\section{Resultados Esperados}\label{resultados-esperados}
+
+\section{Organização do trabalho}\label{organizacao-do-trabalho}
+
+\chapter{Metodologia}\label{metodologia}
+
+\section{Bases de dados}\label{bases-de-dados}
+
+\section{Modelos}\label{modelos}
+
+\chapter{Resultados}\label{resultados}
+
+\bibliography{bibliography/book.bib,bibliography/packages.bib}
+
+\end{document}

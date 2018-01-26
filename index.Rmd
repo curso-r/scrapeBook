@@ -1,0 +1,37 @@
+---
+title: "Web Scraping em R"
+author: "Curso-R"
+date: "`r format(Sys.Date(), '%d de %B de %Y')`"
+knit: "bookdown::render_book"
+documentclass: report
+bibliography: [bibliography/book.bib, bibliography/packages.bib]
+biblio-style: apalike
+link-citations: yes
+fontsize: '12pt'
+colorlinks: yes 
+lot: yes
+lof: yes
+site: bookdown::bookdown_site
+description: "Livro sobre web scraping em R."
+---
+
+
+
+```{r setup, include = FALSE}
+#options(xtable.comment = FALSE)
+
+knitr::opts_chunk$set(echo = F, message = F, comment = F, warning = F, fig.height = 5, fig.width = 9)
+options(OutDec = ',')
+#options(knitr.table.format = 'markdown')
+```
+
+
+```{r include_table, echo = F}
+library(tidyverse)
+library(abjTemplates)
+```
+
+# Sobre o livro {#sobre}
+
+![Essa é a caption.](imgs/logo.svg){#fig:logo}
+
